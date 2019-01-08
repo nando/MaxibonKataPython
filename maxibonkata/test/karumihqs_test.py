@@ -17,4 +17,4 @@ from karumihqs import KarumiHQs
 @given( office_name = st.just( "Madrid KarumiHQs" ))
 def test_should_start_the_day_with_10_maxibons( office_name ):
     office = KarumiHQs( office_name )
-    assert office.maxibonsLeft(), 10
+    assert office.maxibonsLeft() == 10
