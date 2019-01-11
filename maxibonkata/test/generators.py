@@ -19,7 +19,11 @@ from maxibonkata.developer import Developer
 developer_names = text(
     characters( max_codepoint=1000, blacklist_categories=('Cc', 'Cs')),
     min_size = 3 ).map(lambda s: s.strip()).filter(lambda s: len(s) > 0)
-maxibons_to_grab = integers()
 
-developers = builds( Developer, name = developer_names,
-                                maxibonsToGrab = maxibons_to_grab )
+developers = builds( Developer,
+                     name = developer_names,
+                     maxibonsToGrab = integers() )
+
+hungry_developers = builds( Developer,
+                            name = developer_names,
+                            maxibonsToGrab = integers( 8 ) ) # min_value
