@@ -13,6 +13,7 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from karumihqs import KarumiHQs
+from chat import Chat
 from generators import developers, hungry_developers
 
 def calculate_maxibons_left( initial_maxibons, developer ):
@@ -40,3 +41,10 @@ def test_should_buy_10_more_maxibons_if_there_are_less_than_3_in_the_fridge( dev
     expected_maxibons = calculate_maxibons_left( initial_maxibons,
                                                  developer )
     assert office.maxibonsLeft() == expected_maxibons
+
+@given( hungry_developers )
+def test_should_request_10_more_maxibons_using_the_chat_if_there_are_less_than_3_in_the_fridge( developer ):
+    chat = Chat()
+    office = KarumiHQs( chat )
+    office.openFridge( developer )
+    assert office.chat.messageSent == f"Hi guys, I'm {developer.name}. We need more maxibons!"
