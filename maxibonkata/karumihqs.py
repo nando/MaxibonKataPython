@@ -11,7 +11,7 @@ class KarumiHQs:
     MIN_MAXIBONS = 3
     MAX_MAXIBONS = 10
 
-    def __init__( self, office_name = "KarumiHQs" ):
+    def __init__( self ):
         self.maxibons_left = 10
 
     def maxibonsLeft( self ):

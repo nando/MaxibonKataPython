@@ -22,9 +22,8 @@ def calculate_maxibons_left( initial_maxibons, developer ):
     else:
       return maxibons_left
 
-@given( office_name = st.just( "Madrid KarumiHQs" ))
-def test_should_start_the_day_with_10_maxibons( office_name ):
-    office = KarumiHQs( office_name )
+def test_should_start_the_day_with_10_maxibons():
+    office = KarumiHQs()
     assert office.maxibonsLeft() == 10
 
 @given( developers )
