@@ -17,7 +17,7 @@ from generators import developers, hungry_developers
 
 def calculate_maxibons_left( initial_maxibons, developer ):
     maxibons_left = max( initial_maxibons - developer.maxibonsToGrab(), 0 )
-    if maxibons_left <= KarumiHQs.MIN_MAXIBONS:
+    if maxibons_left < KarumiHQs.MIN_MAXIBONS:
       return maxibons_left + KarumiHQs.MAX_MAXIBONS
     else:
       return maxibons_left
