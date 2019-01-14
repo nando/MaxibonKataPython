@@ -37,3 +37,5 @@ karumi_developers = builds( Developer,
                    maxibonsToGrab = integers( 0, 3 ) )
 
 karumies_group = tuples( karumi_developers, karumi_developers, karumi_developers )
+
+developers_group = tuples( developers, developers, developers, developers )

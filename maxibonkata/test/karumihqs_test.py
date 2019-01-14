@@ -16,8 +16,14 @@ from karumihqs import KarumiHQs
 from chat import Chat
 import generators as gnrt
 
-def calculate_maxibons_left( initial_maxibons, developer ):
-    maxibons_left = max( initial_maxibons - developer.maxibonsToGrab(), 0 )
+def calculate_maxibons_left( initial_maxibons, developers ):
+    if not isinstance( developers, tuple ):
+        developers = [ developers ]
+
+    maxibons_left = initial_maxibons
+    for developer in developers:
+        maxibons_left = max( maxibons_left - developer.maxibonsToGrab(), 0 )
+
     if maxibons_left < KarumiHQs.MIN_MAXIBONS:
       return maxibons_left + KarumiHQs.MAX_MAXIBONS
     else:
@@ -61,3 +67,12 @@ def test_should_always_has_more_than_two_maxibons_in_the_fridge_even_if_some_kar
     office = KarumiHQs()
     office.openFridge( developers )
     assert office.maxibonsLeft() > 2
+
+@given ( gnrt.developers_group )
+def test_should_buy_10_more_maxibons_if_there_are_less_than_2_in_the_fridge_when_grabbing_maxibons_in_group( developers ):
+    office = KarumiHQs()
+    initial_maxibons = office.maxibonsLeft()
+    office.openFridge( developers )
+    expected_maxibons = calculate_maxibons_left( initial_maxibons,
+                                                 developers )
+    assert office.maxibonsLeft() == expected_maxibons
