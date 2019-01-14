@@ -10,7 +10,7 @@ This module contains data generators for MaxibonKata property tests.
 from hypothesis import given
 from hypothesis import strategies as st
 
-from hypothesis.strategies import characters, text, integers, builds
+from hypothesis.strategies import characters, text, integers, builds, tuples
 from hypothesis import given
 from unicodedata import category
 
@@ -29,5 +29,11 @@ hungry_developers = builds( Developer,
                             maxibonsToGrab = integers( 8 ) ) # min_value
 
 not_so_hungry_developers = builds( Developer,
-                            name = developer_names,
-                            maxibonsToGrab = integers( 0, 2 ) ) # min, max
+                                   name = developer_names,
+                                   maxibonsToGrab = integers( 0, 2 ) ) # min, max
+
+karumi_developer = builds( Developer,
+                   name = developer_names,
+                   maxibonsToGrab = integers( 0, 3 ) )
+
+karumies_group = tuples( karumi_developer, karumi_developer, karumi_developer )

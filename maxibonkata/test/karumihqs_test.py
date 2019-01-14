@@ -55,3 +55,9 @@ def test_should_never_request_more_maxibons_to_the_team_using_the_chat_if_there_
     office = KarumiHQs( chat )
     office.openFridge( developer )
     assert office.chat.messageSent is None
+
+@given ( gnrt.karumies_group )
+def test_should_always_has_more_than_two_maxibons_in_the_fridge_even_if_some_karumies_grab_maxibons_in_group( developers ):
+    office = KarumiHQs()
+    office.openFridge( developers )
+    assert office.maxibonsLeft() > 2

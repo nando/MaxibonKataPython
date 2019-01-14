@@ -7,6 +7,7 @@ This module contains the KarumiHQs class implementation.
 :license: Apache License. See LICENSE.txt file for further details.
 """
 
+from developer import Developer
 from chat import Chat
 
 class KarumiHQs:
@@ -23,15 +24,23 @@ class KarumiHQs:
     def chat( self ):
         return self.chat
 
-    def openFridge( self, developer ):
-        self.maxibons_left = max(0, self.maxibons_left - developer.maxibonsToGrab())
+    def openFridge( self, developers ):
+        if not isinstance( developers, tuple ):
+            developers = [ developers ]
+
+        for developer in developers:
+            self._grab_maxibons( developer )
+
         if self.maxibons_left < KarumiHQs.MIN_MAXIBONS:
-            self._notify_we_should_buy_maxibons( developer )
+            self._notify_we_should_buy_maxibons( developers[-1] )
             self._buy_maxibons()
 
         return self.maxibons_left
 
     # private
+    def _grab_maxibons( self, developer ):
+        self.maxibons_left = max(0, self.maxibons_left - developer.maxibonsToGrab())
+
     def _notify_we_should_buy_maxibons( self, developer ):
         if( isinstance( self.chat, Chat )):
             self.chat.sendMessage( f"Hi guys, I'm {developer.name}. We need more maxibons!" )
