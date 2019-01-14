@@ -27,3 +27,7 @@ developers = builds( Developer,
 hungry_developers = builds( Developer,
                             name = developer_names,
                             maxibonsToGrab = integers( 8 ) ) # min_value
+
+not_so_hungry_developers = builds( Developer,
+                            name = developer_names,
+                            maxibonsToGrab = integers( 0, 2 ) ) # min, max

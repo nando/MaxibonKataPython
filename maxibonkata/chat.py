@@ -9,7 +9,7 @@ This module contains the Chat class implementation.
 
 class Chat:
     def __init__( self ):
-        self.messageSent = ""
+        self.messageSent = None
 
     def messageSent( self ):
         return self.messageSent
