@@ -32,8 +32,8 @@ not_so_hungry_developers = builds( Developer,
                                    name = developer_names,
                                    maxibonsToGrab = integers( 0, 2 ) ) # min, max
 
-karumi_developer = builds( Developer,
+karumi_developers = builds( Developer,
                    name = developer_names,
                    maxibonsToGrab = integers( 0, 3 ) )
 
-karumies_group = tuples( karumi_developer, karumi_developer, karumi_developer )
+karumies_group = tuples( karumi_developers, karumi_developers, karumi_developers )
