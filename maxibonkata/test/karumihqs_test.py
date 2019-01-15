@@ -76,3 +76,10 @@ def test_should_buy_10_more_maxibons_if_there_are_less_than_2_in_the_fridge_when
     expected_maxibons = calculate_maxibons_left( initial_maxibons,
                                                  developers )
     assert office.maxibonsLeft() == expected_maxibons
+
+@given ( gnrt.hungry_group )
+def test_should_request_10_more_maxibons_using_the_chat_if_there_are_less_than_3_in_the_fridge_when_grabbing_maxibons_in_group( developers ):
+    chat = Chat()
+    office = KarumiHQs( chat )
+    office.openFridge( developers )
+    assert office.chat.messageSent == f"Hi guys, I'm {developers[-1].name}. We need more maxibons!"

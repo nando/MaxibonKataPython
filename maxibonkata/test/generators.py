@@ -39,3 +39,5 @@ karumi_developers = builds( Developer,
 karumies_group = tuples( karumi_developers, karumi_developers, karumi_developers )
 
 developers_group = tuples( developers, developers, developers, developers )
+
+hungry_group = tuples( hungry_developers, hungry_developers )
