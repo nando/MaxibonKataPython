@@ -83,3 +83,10 @@ def test_should_request_10_more_maxibons_using_the_chat_if_there_are_less_than_3
     office = KarumiHQs( chat )
     office.openFridge( developers )
     assert office.chat.messageSent == f"Hi guys, I'm {developers[-1].name}. We need more maxibons!"
+
+@given ( gnrt.not_so_hungry_group )
+def never_request_more_maxibons_to_the_team_using_the_chat_if_there_are_more_than_2_in_the_fridge_when_grabbing_maxibons_in_group( developers ):
+    chat = Chat()
+    office = KarumiHQs( chat )
+    office.openFridge( developers )
+    assert office.chat.messageSent == None
