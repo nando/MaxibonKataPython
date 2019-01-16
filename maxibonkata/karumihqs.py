@@ -17,9 +17,13 @@ class KarumiHQs:
     def __init__( self, chat = None ):
         self.chat = chat
         self.maxibons_left = 10
+        self.melting_maxibons = 0
 
     def maxibonsLeft( self ):
         return self.maxibons_left
+
+    def meltingMaxibons( self ):
+        return self.melting_maxibons
 
     def chat( self ):
         return self.chat
@@ -46,4 +50,5 @@ class KarumiHQs:
             self.chat.sendMessage( f"Hi guys, I'm {developer.name}. We need more maxibons!" )
 
     def _buy_maxibons( self ):
+        self.melting_maxibons = self.maxibons_left
         self.maxibons_left = self.maxibons_left + KarumiHQs.MAX_MAXIBONS
