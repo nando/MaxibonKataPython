@@ -29,7 +29,15 @@ def test_should_always_grab_a_positive_number_of_maxibons( name, mtg ):
     ( Developer.fran, 1 ),
     ( Developer.davide, 0 ),
     ( Developer.sergio, 2 ),
-    ( Developer.jorge, 1 )
+    ( Developer.jorge, 1 ),
+    ( Developer.nuria, 3),
+    ( Developer.fausto, 2),
+    ( Developer.julia,  0),
+    ( Developer.luismi, 3),
+    ( Developer.susana, 2),
+    ( Developer.sahu, 1),
+    ( Developer.vero, 3),
+    ( Developer.vito, 3)
 ]) )
 def test_assign_the_number_of_maxibons_specified_to_every_developer( tuple ):
     developer = tuple[0]()
