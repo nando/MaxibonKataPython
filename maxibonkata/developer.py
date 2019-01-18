@@ -12,49 +12,25 @@ class Developer:
         self.name = name
         self.maxibons_to_grab = max( 0, maxibonsToGrab )
 
-    def name( self ):
-        return self.name
-
     def maxibonsToGrab( self ):
         return self.maxibons_to_grab
 
-    # Karumi's
     def pedro():
-        return Developer("Pedro", 3)
+        return { "name": "Pedro",
+                 "maxibons_to_grab": 3 }
 
     def fran():
-        return Developer("Fran", 1)
+        return { "name": "Fran",
+                 "maxibons_to_grab": 1 }
 
     def davide():
-        return Developer("Davide", 0)
+        return { "name": "Davide",
+                 "maxibons_to_grab": 0 }
 
     def sergio():
-        return Developer("Sergio", 2)
+        return { "name": "Sergio",
+                 "maxibons_to_grab": 2 }
 
     def jorge():
-        return Developer("Jorge", 1)
-
-    # TCK's
-    def nuria():
-        return Developer("Nuria", 3)
-
-    def fausto():
-        return Developer("Fausto", 2)
-
-    def julia():
-        return Developer("Julia",  0)
-
-    def luismi():
-        return Developer("Luismi", 3)
-
-    def susana():
-        return Developer("Susana", 2)
-
-    def sahu():
-        return Developer("Sahu", 1)
-
-    def vero():
-        return Developer("Vero", 3)
-
-    def vito():
-        return Developer("Vito", 3)
+        return { "name": "jorge",
+                 "maxibons_to_grab": 1 }
