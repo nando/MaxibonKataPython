@@ -91,7 +91,7 @@ def test_never_request_more_maxibons_to_the_team_using_the_chat_if_there_are_mor
     office.openFridge( developers )
     assert office.chat.messageSent == None
 
-@given( gnrt.developers )
+@given( gnrt.melting_developers )
 def test_maxibons_above_max_maxibons_are_melting_maxibons( developer ):
     office = KarumiHQs()
     office.openFridge( developer )

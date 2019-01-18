@@ -28,6 +28,10 @@ hungry_developers = builds( Developer,
                             name = developer_names,
                             maxibonsToGrab = integers( 8 ) ) # min_value
 
+melting_developers = builds( Developer,
+                             name = developer_names,
+                             maxibonsToGrab = integers( 8, 9 ) ) # 1 or 2'll melt
+
 not_so_hungry_developers = builds( Developer,
                                    name = developer_names,
                                    maxibonsToGrab = integers( 0, 2 ) ) # min, max
