@@ -32,6 +32,6 @@ def test_should_always_grab_a_positive_number_of_maxibons( name, mtg ):
     ( Developer.jorge, 1 )
 ]) )
 def test_assign_the_number_of_maxibons_specified_to_every_developer( tuple ):
-    developer = tuple[0]
+    developer = tuple[0]()
     maxibons_to_grab = tuple[1]
-    assert developer()["maxibons_to_grab"] == maxibons_to_grab
+    assert developer.maxibonsToGrab() == maxibons_to_grab

@@ -16,21 +16,16 @@ class Developer:
         return self.maxibons_to_grab
 
     def pedro():
-        return { "name": "Pedro",
-                 "maxibons_to_grab": 3 }
+        return Developer("Pedro", 3)
 
     def fran():
-        return { "name": "Fran",
-                 "maxibons_to_grab": 1 }
+        return Developer("Fran", 1)
 
     def davide():
-        return { "name": "Davide",
-                 "maxibons_to_grab": 0 }
+        return Developer("Davide", 0)
 
     def sergio():
-        return { "name": "Sergio",
-                 "maxibons_to_grab": 2 }
+        return Developer("Sergio", 2)
 
     def jorge():
-        return { "name": "jorge",
-                 "maxibons_to_grab": 1 }
+        return Developer("Jorge", 1)
