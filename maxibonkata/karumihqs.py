@@ -18,12 +18,16 @@ class KarumiHQs:
         self.chat = chat
         self.maxibons_left = 10
         self.melting_maxibons = 0
+        self.melted_maxibons = 0
 
     def maxibonsLeft( self ):
         return self.maxibons_left
 
     def meltingMaxibons( self ):
         return self.melting_maxibons
+
+    def meltedMaxibons( self ):
+        return self.melted_maxibons
 
     def chat( self ):
         return self.chat
@@ -52,3 +56,4 @@ class KarumiHQs:
     def _buy_maxibons( self ):
         self.melting_maxibons = self.maxibons_left
         self.maxibons_left = self.maxibons_left + KarumiHQs.MAX_MAXIBONS
+        self.melted_maxibons += self.melting_maxibons

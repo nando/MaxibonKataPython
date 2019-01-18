@@ -97,3 +97,15 @@ def test_maxibons_above_max_maxibons_are_melting_maxibons( developer ):
     office.openFridge( developer )
     melting_maxibons = max( 0, office.maxibonsLeft() - KarumiHQs.MAX_MAXIBONS )
     assert melting_maxibons == office.meltingMaxibons()
+    assert melting_maxibons > 0
+
+@given( gnrt.melting_developers,
+        gnrt.hungry_developers,
+        gnrt.hungry_developers )
+def test_melted_maxibons_accumulate_melting_maxibons( melting, hungry1, hungry2 ):
+    office = KarumiHQs()
+    office.openFridge( melting )
+    office.openFridge( hungry1 )
+    office.openFridge( hungry2 )
+    assert office.meltedMaxibons() > 0
+    assert office.meltedMaxibons() > office.meltingMaxibons()
