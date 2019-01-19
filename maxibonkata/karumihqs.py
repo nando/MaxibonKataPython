@@ -29,6 +29,11 @@ class KarumiHQs:
     def meltedMaxibons( self ):
         return self.melted_maxibons
 
+    def init_counters( self ):
+        self.maxibons_left = 10
+        self.melting_maxibons = 0
+        self.melted_maxibons = 0
+
     def chat( self ):
         return self.chat
 
