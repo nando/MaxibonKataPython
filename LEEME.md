@@ -19,7 +19,7 @@ Sin embargo, si en esa misma situación la persona que llega pide 3 maxibons o m
 
 # License
 
-Copyright 2018 Karumi & The Cocktail Global
+Copyright 2019 Karumi & The Cocktail Global
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
