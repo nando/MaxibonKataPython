@@ -1,11 +1,11 @@
 ![The Cocktail logo][tcklogo] ❤ ![Karumi logo][karumilogo]
 # Kata Maxibon for Python. [![Build Status](https://travis-ci.org/nando/MaxibonKataPython.svg?branch=master)](https://travis-ci.org/nando/MaxibonKataPython)
 
-**DISCLAIMER: Work in Progress**
-
 - We are here to practice [property based testing][property-based-testing].
 - We are going to use [Hypothesis][hypothesis] to write our tests.
 - We are going to practice pair programming.
+
+**WARNING**: if the build is **broken probably [The Maxiconf Problem](https://github.com/nando/MaxibonKataPython/blob/maxiconf_problem/LEEME.md#bonus-track-the-maxiconf-problem) HAS BEEN RESOLVED!!**. The melting problem is stated in the _maxiconf-problem_test.py_.
 
 During this kata we will try to find how to use property based testing from different points of view:
 
