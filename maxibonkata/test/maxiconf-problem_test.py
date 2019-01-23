@@ -6,14 +6,23 @@ This file contains the test to let us enjoy an AWESOME conf. wo melted Maxibons.
 :license: Apache License. See LICENSE.txt file for further details.
 """
 
+import os
+
 from karumihqs import KarumiHQs
 from developer import Developer
 
-from hypothesis import note, settings
+from hypothesis import note, settings, Verbosity
 from hypothesis.strategies import integers
 from hypothesis.stateful import RuleBasedStateMachine, rule, invariant
 
+settings.register_profile("default", max_examples=2000)
+settings.register_profile("ci", max_examples=200)
+settings.register_profile("debug", max_examples=2000,
+                                   verbosity=Verbosity.verbose)
+settings.load_profile(os.getenv(u"HYPOTHESIS_PROFILE", "default"))
+
 class MaxiconfProblem( RuleBasedStateMachine ):
+    MAX_MELTED_MAXIBONS=2
     melted_maxibons = 0
     awesome_conf = False
     maxiconf_venue = KarumiHQs()
@@ -100,7 +109,7 @@ class MaxiconfProblem( RuleBasedStateMachine ):
             print("Maxiconf completed delivering {m} melted maxibons.".format(
                 m = self.maxiconf_venue.meltedMaxibons() ))
             self.melted_maxibons = self.maxiconf_venue.meltedMaxibons()
-            self.awesome_conf = self.melted_maxibons < 2
+            self.awesome_conf = self.melted_maxibons < self.MAX_MELTED_MAXIBONS
             if not( self.awesome_conf ):
                 for dev in self.audience:
                     dev[1]["grabbings"] = 0
@@ -120,5 +129,4 @@ class MaxiconfProblem( RuleBasedStateMachine ):
 
         assert not( self.awesome_conf )
 
-with settings(max_examples=2000):
-    MaxiconfProblemTest = MaxiconfProblem.TestCase
+MaxiconfProblemTest = MaxiconfProblem.TestCase
