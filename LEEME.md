@@ -7,9 +7,9 @@ _Karumi_ y _The Cocktail_ traman la futura celebración de la Maxiconf, una conf
 
 Por un malentendido con la empresa encargada de la organización del evento, el congelador del único frigorífico existente en el lugar en el que se celebrará la conferencia sólo tiene capacidad para contener los maxibons indicados por **KarumiHQs::MAX_MAXIBONS** (10 maxibons).
 
-**KarumiHQs** es la clase que tiene toda la lógica necesaria para manejar la intendencia el evento: **MIN_MAXIBONS** (3 maxibons) es el umbral bajo el cual solicitará de forma automágica (por correo electrónico) un nuevo pedido de los maxibons indicados por **MAX_MAXIBONS**.
+**KarumiHQs** es la clase que tiene toda la lógica necesaria para manejar la intendencia el evento: **MIN_MAXIBONS** (3 maxibons) es el umbral bajo el cual solicitará de forma automágica un nuevo pedido de los maxibons indicados por **MAX_MAXIBONS** (por correo electrónico o levantando una lambda, dependiendo del presupuesto final :P).
 
-Si tenemos 3 maxibons y, por ejemplo, alguien nos pide uno más, se realizará el pedido y no tardaremos mucho en tener 12 maxibons en nuestro frigoríco: en la Maxiconf dos de ellos no entrarían en el congelador y esperarían en el frigorífico a que alguien llegue antes de que se derritan demasiado :pray::pray::pray:.
+Si tenemos 3 maxibons y, por ejemplo, alguien nos pide uno más, se realizará el pedido y no tardaremos mucho en tener 12 maxibons en nuestro frigorífico: en la Maxiconf dos de ellos no entrarían en el congelador y esperarían en el frigorífico a que alguien llegue antes de que se derritan demasiado :pray::pray::pray:.
 
 Sin embargo, si en esa misma situación la persona que llega pide 3 maxibons o más, el congelador se quedará vacío con espacio para los 10 maxibons que llegarán en breve.
 
